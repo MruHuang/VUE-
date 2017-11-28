@@ -8,6 +8,10 @@
 <div id="app3">
     <p> 至換內容</p>
 </div>
+<div id="app4">
+    <p>{{a}}</p>
+    <button v-on:click="alert2"/>alert</button>
+</div>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
 <script id="tpl" type="x-template">
     <div class="wrapper">
@@ -29,5 +33,14 @@
     var vm3 = new Vue({
         el: '#app3',
         template : '#tpl'
+    });
+    new Vue({
+        el: '#app4',
+        data: { a: 2 },
+        methods: {
+            alert2: function () {
+                alert(this.a);
+            }
+        }
     });
 </script>
