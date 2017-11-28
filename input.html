@@ -5,7 +5,15 @@
 <div id="app2">
     <message content="change type"></message>
 </div>
+<div id="app3">
+    <p> 至換內容</p>
+</div>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
+<script id="tpl" type="x-template">
+    <div class="wrapper">
+        <p>This is a tpl from script tag</p>
+    </div>
+</script>
 <script type="text/javascript">
     var Message = Vue.extend({
         props : ['content'],
@@ -17,5 +25,9 @@
     });
     var vm2 = new Vue({
         el: '#app2'
+    });
+    var vm3 = new Vue({
+        el: '#app3',
+        template : '#tpl'
     });
 </script>
